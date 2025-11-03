@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -6,17 +6,6 @@ import { ExternalLink, Github, ArrowRight, ChevronRight, ChevronLeft } from "luc
 import { useState } from "react";
 
 export default function Projects() {
-    const [current, setCurrent] = useState(0);
-
-    const nextSlide = () => {
-        setCurrent((prev) => (prev + 1) % projects.length);
-    };
-
-    const prevSlide = () => {
-        setCurrent((prev) => (prev - 1 + projects.length) % projects.length);
-    };
-
-
     const projects = [
         {
             title: "Portfolio Website",
@@ -39,13 +28,48 @@ export default function Projects() {
             demo: "#",
             github: "#",
         },
-        
-       
-
+        {
+            title: "Blog Platform 2",
+            description: "Dynamic blog platform with markdown support and user authentication.",
+            image: "/p3.png",
+            demo: "#",
+            github: "#",
+        },
     ];
 
+    const [current, setCurrent] = useState(0);
+    const visibleCards = 3; 
+
+    const nextSlide = () => {
+        setCurrent((prev) => (prev + 1) % projects.length);
+    };
+
+    const prevSlide = () => {
+        setCurrent((prev) => (prev - 1 + projects.length) % projects.length);
+    };
+
+    // Width of each card in percentage
+    const cardWidthPercentage = 100 / visibleCards;
+
     return (
-        <section id="projects" className="bg-linear-to-br from-gray-50 to-blue-50/30 py-24">
+        <section id="projects" className="bg-linear-to-br from-gray-50 to-blue-50/30 py-24 relative">
+            {
+                projects.length > 3 && <>
+                    {/* Navigation Buttons */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute top-1/2 text-blue-700 left-10 sm:left-2 z-10 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md hover:bg-white transition"
+                    >
+                        <ChevronLeft size={22} />
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="absolute top-1/2 text-blue-700 right-10 sm:right-2 z-10 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md hover:bg-white transition"
+                    >
+                        <ChevronRight size={22} />
+                    </button></>
+            }
+
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header Section */}
                 <div className="text-center mb-20">
@@ -63,15 +87,12 @@ export default function Projects() {
                     </p>
                 </div>
 
-                {
-                    projects.length <= 3 ? <>
+                {projects.length <= 3 ? (
+                    <>
                         {/* Projects Grid */}
                         <div className="grid lg:grid-cols-3 gap-8">
                             {projects.map((project, index) => (
-                                <div
-                                    key={index}
-                                    className="group relative"
-                                >
+                                <div key={index} className="group relative">
                                     {/* Background Glow Effect */}
                                     <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-purple-500/10 rounded-3xl transform group-hover:scale-105 group-hover:opacity-100 opacity-0 transition-all duration-500"></div>
 
@@ -147,19 +168,19 @@ export default function Projects() {
                                 </div>
                             ))}
                         </div>
-                    </> : <>
-
+                    </>
+                ) : (
+                    <>
                         <div className="relative w-full overflow-hidden">
                             <div
                                 className="flex transition-transform duration-700 ease-in-out"
-                                style={{ transform: `translateX(-${current * 100}%)` }}
+                                style={{ transform: `translateX(-${current * cardWidthPercentage}%)` }}
                             >
                                 {projects.map((project, index) => (
                                     <div
                                         key={index}
-                                        className="min-w-full px-4 flex justify-center group relative"
+                                        className="flex-shrink-0 px-4 w-full md:w-1/2 lg:w-1/3"
                                     >
-
                                         {/* Project Card */}
                                         <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 group-hover:shadow-2xl group-hover:border-blue-200/50 transition-all duration-500 overflow-hidden w-full max-w-2xl flex flex-col">
                                             {/* Image Container */}
@@ -233,20 +254,6 @@ export default function Projects() {
                                 ))}
                             </div>
 
-                            {/* Navigation Buttons */}
-                            <button
-                                onClick={prevSlide}
-                                className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md hover:bg-white transition"
-                            >
-                                <ChevronLeft size={22} />
-                            </button>
-                            <button
-                                onClick={nextSlide}
-                                className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md hover:bg-white transition"
-                            >
-                                <ChevronRight size={22} />
-                            </button>
-
                             {/* Indicators */}
                             <div className="flex justify-center gap-2 mt-8">
                                 {projects.map((_, i) => (
@@ -260,11 +267,7 @@ export default function Projects() {
                             </div>
                         </div>
                     </>
-                }
-
-
-
-
+                )}
 
                 {/* View More Section */}
                 <div className="text-center mt-16">
