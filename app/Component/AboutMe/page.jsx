@@ -82,7 +82,7 @@ const AboutMe = () => {
                     <div className="pt-4">
                         <a
                             href="/Shakib.jpg"
-                            className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 font-semibold group"
+                            className="inline-flex items-center gap-3 px-8 py-4 btn-primary text-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 font-semibold group"
                         >
                             <span>Download Resume</span>
                             <svg

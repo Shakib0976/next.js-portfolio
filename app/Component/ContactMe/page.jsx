@@ -1,6 +1,28 @@
+"use client";
 import { Github, Linkedin, Mail, Send, MessageCircle, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactMe() {
+
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitted(true);
+
+
+        const formData = new FormData(e.target);
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => console.log("Form submitted:", data))
+            .catch(err => console.error("Form submit error:", err));
+    };
+
+
     return (
         <section id="contact" className="bg-linear-to-br from-gray-50 via-blue-50/30 to-cyan-50/20 py-24 relative overflow-hidden">
             {/* Background decorative elements */}
@@ -39,66 +61,97 @@ export default function ContactMe() {
                                     I&apos;ll get back to you within 24 hours
                                 </p>
                             </div>
+                            {submitted ? (
+                                <div className="text-center py-10 px-6">
+                                    <div className="max-w-md mx-auto">
 
-                            <form
-                                className="space-y-6"
-                                action="https://api.web3forms.com/submit"
-                                method="POST"
-                            >
-                                <input type="hidden" name="access_key" value="34038484-9864-4654-b1db-3f591eaff005" />
-                                <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+                                        <div className="w-20 h-20 mt-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                            <svg
+                                                className="w-10 h-10 text-green-600 animate-bounce"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                style={{
+                                                    animation: 'bounceIn 0.8s ease-out forwards'
+                                                }}
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M5 13l4 4L19 7"
+                                                />
+                                            </svg>
+                                        </div>
 
-                                <div className="space-y-2 text-start">
-                                    <label htmlFor="name" className="block text-gray-700 font-medium text-sm uppercase tracking-wider">
-                                        Your Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        required
-                                        className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 hover:bg-white/70 placeholder-gray-400"
-                                        placeholder="Enter your full name"
-                                    />
+
+                                        <h3 className="text-3xl font-bold text-green-600 mb-4">Message Sent!</h3>
+                                        <p className="text-gray-700 mb-2 text-lg">Thank you for reaching out!</p>
+                                        <p className="text-gray-600 mb-8">I&apos;ve received your message and will get back to you soon.</p>
+
+
+                                        <button
+                                            onClick={() => setSubmitted(false)}
+                                            className="inline-flex items-center gap-2  bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-semibold group relative overflow-hidden"
+                                        >
+
+                                            <svg className="w-5 h-5 relative z-10 group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                            </svg>
+                                            <span className="relative z-10">Send Another Message</span>
+                                        </button>
+                                    </div>
                                 </div>
+                            ) : (
+                                <form className="space-y-6" onSubmit={handleSubmit}>
+                                    <input type="hidden" name="access_key" value="34038484-9864-4654-b1db-3f591eaff005" />
 
-                                <div className="space-y-2 text-start">
-                                    <label htmlFor="email" className="block text-gray-700 font-medium text-sm uppercase tracking-wider">
-                                        Email Address
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        required
-                                        className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 hover:bg-white/70 placeholder-gray-400"
-                                        placeholder="your@email.com"
-                                    />
-                                </div>
+                                    <div className="space-y-2 text-start">
+                                        <label htmlFor="name" className="block text-gray-700 font-medium text-sm uppercase tracking-wider">Your Name</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            required
+                                            className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 hover:bg-white/70 placeholder-gray-400"
+                                            placeholder="Enter your full name"
+                                        />
+                                    </div>
 
-                                <div className="space-y-2 text-start">
-                                    <label htmlFor="message" className="block text-gray-700 font-medium text-sm uppercase tracking-wider">
-                                        Your Message
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        required
-                                        rows={5}
-                                        className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 hover:bg-white/70 placeholder-gray-400 resize-none"
-                                        placeholder="Tell me about your project, collaboration ideas, or just say hello..."
-                                    ></textarea>
-                                </div>
+                                    <div className="space-y-2 text-start">
+                                        <label htmlFor="email" className="block text-gray-700 font-medium text-sm uppercase tracking-wider">Email Address</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            required
+                                            className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 hover:bg-white/70 placeholder-gray-400"
+                                            placeholder="your@email.com"
+                                        />
+                                    </div>
 
-                                <button
-                                    type="submit"
-                                    className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-semibold flex items-center justify-center gap-2 group relative overflow-hidden"
-                                >
-                                    <div className="absolute inset-0 bg-linear-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                                    <span className="relative z-10">Send Message</span>
-                                    <Send size={18} className="relative z-10 group-hover:translate-x-1 transition-transform duration-200" />
-                                </button>
-                            </form>
+                                    <div className="space-y-2 text-start">
+                                        <label htmlFor="message" className="block text-gray-700 font-medium text-sm uppercase tracking-wider">Your Message</label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            required
+                                            rows={5}
+                                            className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 hover:bg-white/70 placeholder-gray-400 resize-none"
+                                            placeholder="Tell me about your project, collaboration ideas, or just say hello..."
+                                        ></textarea>
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-semibold flex items-center justify-center gap-2 group relative overflow-hidden"
+                                    >
+                                        <div className="absolute inset-0 bg-linear-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                                        <span className="relative z-10">Send Message</span>
+                                        <Send size={18} className="relative z-10 group-hover:translate-x-1 transition-transform duration-200" />
+                                    </button>
+                                </form>
+                            )}
                         </div>
                     </div>
 
