@@ -18,7 +18,7 @@ export default function HeroSection() {
 
                     {/* Main Heading */}
                     <div className="space-y-4">
-                        <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                        <h1 className="text-5xl lg:text-6xl font-bold text-default  leading-tight">
                             Hi, I&apos;m{" "}
                             <span className="text-transparent text-primary  bg-clip-text">
                                 Md. Shakib Khan
@@ -29,12 +29,12 @@ export default function HeroSection() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
+                    <p className="text-xl text-base max-w-2xl leading-relaxed">
                         A passionate{" "}
-                        <span className="text-secondary font-semibold bg-blue-50 px-1 rounded">Web Developer</span>{" "}
+                        <span className="text-secondary font-semibold  px-1 rounded">Web Developer</span>{" "}
                         who loves building beautiful, responsive, and user-friendly websites using
-                        modern technologies like <span className="font-semibold text-gray-900">Next.js</span> and{" "}
-                        <span className="font-semibold text-gray-900">Tailwind CSS</span>.
+                        modern technologies like <span className="font-semibold text-default">Next.js</span> and{" "}
+                        <span className="font-semibold text-default">Tailwind CSS</span>.
                     </p>
 
                     {/* CTA Buttons */}
@@ -48,7 +48,7 @@ export default function HeroSection() {
                         </a>
                         <a
                             href="#contact"
-                            className="group inline-flex items-center justify-center gap-3 px-8 py-4 btn-secondary backdrop-blur-sm border border-gray-300 text-gray-700 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-300 transform hover:-translate-y-1 transition-all duration-300 font-semibold"
+                            className="group inline-flex items-center justify-center gap-3 px-8 py-4 btn-secondary backdrop-blur-sm border border-gray-300 text-gray-700 dark:text-gray-300 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-300 transform hover:-translate-y-1 transition-all duration-300 font-semibold"
                         >
                             <span>Contact Me</span>
                             <Download size={20} className="group-hover:translate-y-0.5 transition-transform duration-300" />
@@ -58,15 +58,15 @@ export default function HeroSection() {
                     {/* Stats */}
                     <div className="flex flex-wrap gap-8 pt-8">
                         <div className="text-center">
-                            <div className="text-2xl font-bold text-gray-900">10+</div>
+                            <div className="text-2xl font-bold text-default">10+</div>
                             <div className="text-sm text-default ">Projects</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-2xl font-bold text-gray-900">2+</div>
+                            <div className="text-2xl font-bold text-default">2+</div>
                             <div className="text-sm text-default ">Years Experience</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-2xl font-bold text-gray-900">5+</div>
+                            <div className="text-2xl font-bold text-default">5+</div>
                             <div className="text-sm text-default ">Happy Clients</div>
                         </div>
                     </div>

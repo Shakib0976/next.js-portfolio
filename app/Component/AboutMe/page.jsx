@@ -38,7 +38,7 @@ const AboutMe = () => {
                     <div className="space-y-4">
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-1 bg-linear-to-r from-blue-500 to-blue-600 rounded-full"></div>
-                            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+                            <h2 className="text-4xl lg:text-5xl font-bold text-default">
                                 About <span className="text-secondary">Me</span>
                             </h2>
                         </div>
@@ -47,15 +47,15 @@ const AboutMe = () => {
 
                     {/* Content */}
                     <div className="space-y-6">
-                        <p className="text-gray-700 text-lg leading-relaxed text-justify">
-                            Hello! I&apos;m <span className="font-semibold text-secondary bg-blue-50 px-1 rounded">Md. Shakib Khan</span>,
+                        <p className="text-base text-lg leading-relaxed text-justify">
+                            Hello! I&apos;m <span className="font-semibold text-secondary bg-blue-50 dark:bg-blue-950 px-1 rounded">Md. Shakib Khan</span>,
                             a passionate web developer with experience in building responsive, modern,
-                            and user-friendly websites. I specialize in <span className="font-semibold text-gray-900 bg-yellow-50 px-1 rounded">Next.js</span>,
-                            <span className="font-semibold text-gray-900 bg-blue-50 px-1 rounded"> React</span>, and
-                            <span className="font-semibold text-gray-900 bg-cyan-50 px-1 rounded"> Tailwind CSS</span>.
+                            and user-friendly websites. I specialize in <span className="font-semibold text-gray-900 dark:text-gray-400 bg-yellow-50 dark:bg-green-900 px-1 rounded">Next.js</span>,
+                            <span className="font-semibold text-gray-900 dark:text-gray-400 bg-blue-50 dark:bg-blue-950 px-1 rounded"> React</span>, and
+                            <span className="font-semibold text-gray-900 dark:text-gray-400 bg-cyan-50 dark:bg-cyan-950 px-1 rounded"> Tailwind CSS</span>.
                         </p>
 
-                        <p className="text-gray-700 text-lg leading-relaxed text-justify">
+                        <p className="text-base text-lg leading-relaxed text-justify">
                             I love turning ideas into beautiful, functional web applications. When I&apos;m
                             not coding, you can find me exploring the latest web technologies, designing
                             UI/UX interfaces, or contributing to open-source projects.
@@ -64,17 +64,17 @@ const AboutMe = () => {
 
                     {/* Stats or Skills Preview */}
                     <div className="flex flex-wrap gap-6 py-4">
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">
+                        <div className="flex items-center gap-2 cardBg-secondary px-4 py-2 rounded-lg shadow-sm border border-gray-100">
                             <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                            <span className="text-gray-700 font-medium">Frontend</span>
+                            <span className="text-gray-700 dark:text-gray-800 font-medium">Frontend</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">
+                        <div className="flex items-center gap-2 cardBg-secondary px-4 py-2 rounded-lg shadow-sm border border-gray-100">
                             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            <span className="text-gray-700 font-medium">UI/UX</span>
+                            <span className="text-gray-700 dark:text-gray-800  font-medium">UI/UX</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">
+                        <div className="flex items-center gap-2 cardBg-secondary px-4 py-2 rounded-lg shadow-sm border border-gray-100">
                             <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                            <span className="text-gray-700 font-medium">Responsive</span>
+                            <span className="text-gray-700 dark:text-gray-800 font-medium">Responsive</span>
                         </div>
                     </div>
 

@@ -45,7 +45,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex items-center gap-1 bg-gray-300 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl px-2 py-1 border border-gray-200/50 dark:border-gray-600/50">
+                <ul className="hidden md:flex items-center gap-1 bg-gray-200/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl px-2 py-1 border border-gray-200/50 dark:border-gray-600/50">
                     {navLinks.map((item) => (
                         <li key={item.href}>
                             <Link

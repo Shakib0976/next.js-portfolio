@@ -34,14 +34,15 @@ export default function SkillsSection() {
     const loopSkills = [...skills, ...skills];
 
     return (
-        <div className="max-w-7xl mx-auto px-6 bg-linear-to-br from-gray-50 via-blue-50/20 to-purple-50/10 py-24 relative overflow-hidden">
+        <div className="bg-secondary py-24 relative ">
+        
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 bg-secondary overflow-hidden relative z-10">
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-3 mb-4">
                         <Code2 className="text-blue-500" size={32} weight="duotone" />
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                        <h2 className="text-4xl md:text-5xl font-bold text-default">
                             My <span className="text-transparent text-secondary bg-clip-text">Skills</span>
                         </h2>
                         <Sparkles className="text-purple-500" size={32} weight="duotone" />

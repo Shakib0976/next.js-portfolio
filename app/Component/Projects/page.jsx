@@ -52,7 +52,7 @@ export default function Projects() {
     const cardWidthPercentage = 100 / visibleCards;
 
     return (
-        <section id="projects" className="bg-linear-to-br from-gray-50 to-blue-50/30 py-24 relative">
+        <section id="projects" className="bg-secondary py-24 relative">
             {
                 projects.length > 3 && <>
                     {/* Navigation Buttons */}
@@ -75,7 +75,7 @@ export default function Projects() {
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center gap-3 mb-4">
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                        <h2 className="text-4xl md:text-5xl font-bold text-default">
                             Featured <span className="text-secondary">Projects</span>
                         </h2>
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
@@ -97,7 +97,7 @@ export default function Projects() {
                                     <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-purple-500/10 rounded-3xl transform group-hover:scale-105 group-hover:opacity-100 opacity-0 transition-all duration-500"></div>
 
                                     {/* Project Card */}
-                                    <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 group-hover:shadow-2xl group-hover:border-blue-200/50 transition-all duration-500 overflow-hidden h-full flex flex-col">
+                                    <div className="relative cardBg-secondary backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 group-hover:shadow-2xl group-hover:border-blue-200/50 transition-all duration-500 overflow-hidden h-full flex flex-col">
                                         {/* Image Container */}
                                         <div className="relative h-56 overflow-hidden">
                                             <Image
@@ -139,7 +139,7 @@ export default function Projects() {
                                                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                                                     {project.title}
                                                 </h3>
-                                                <p className="text-gray-600 leading-relaxed mb-6">
+                                                <p className="text-gray-600 dark:text-gray-800 leading-relaxed mb-6">
                                                     {project.description}
                                                 </p>
                                             </div>
@@ -182,7 +182,7 @@ export default function Projects() {
                                         className="flex-shrink-0 px-4 w-full md:w-1/2 lg:w-1/3"
                                     >
                                         {/* Project Card */}
-                                        <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 group-hover:shadow-2xl group-hover:border-blue-200/50 transition-all duration-500 overflow-hidden w-full max-w-2xl flex flex-col">
+                                        <div className="relative cardBg-secondary backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 group-hover:shadow-2xl group-hover:border-blue-200/50 transition-all duration-500 overflow-hidden w-full max-w-2xl flex flex-col">
                                             {/* Image Container */}
                                             <div className="relative h-56 overflow-hidden">
                                                 <Image
@@ -224,7 +224,7 @@ export default function Projects() {
                                                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                                                         {project.title}
                                                     </h3>
-                                                    <p className="text-gray-600 leading-relaxed mb-6">
+                                                    <p className="text-gray-600 dark:text-gray-800 leading-relaxed mb-6">
                                                         {project.description}
                                                     </p>
                                                 </div>
@@ -242,7 +242,7 @@ export default function Projects() {
                                                     <Link
                                                         href={project.github}
                                                         target="_blank"
-                                                        className="flex-1 flex btn-secondary items-center justify-center gap-2 px-4 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-300 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
+                                                        className="flex-1 flex btn-secondary dark:text-gray-200 items-center justify-center gap-2 px-4 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-300 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
                                                     >
                                                         <Github size={16} />
                                                         Code

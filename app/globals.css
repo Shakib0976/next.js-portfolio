@@ -5,12 +5,15 @@
   --bg-Hero-primary: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(239, 246, 255, 0.3), rgba(207, 250, 254, 0.2));
   --Hero-ImgShadow-primary: linear-gradient(to right, #183b64, #67e8f9);
   --bg-primary: linear-gradient(to bottom right, #f9fafb, rgba(239, 246, 255, 0.3));
-  --bg-secondary: linear-gradient(to bottom right, #2563eb, #1d4ed8, #7c3aed);
+  --bg-secondary: linear-gradient(to bottom right, #ffffff, rgba(239, 246, 255, 0.2));
+  --cardBg-primary: linear-gradient(to bottom right, #2563eb, #1d4ed8, #7c3aed);
+  --cardBg-secondary: rgba(255, 255, 255, 0.8);
   --btn-primary: linear-gradient(to right, #062c83, #114ad7);
   --btn-secondary: white;
   --text-primary: linear-gradient(to right, #2563eb, #0891b2);
   --text-secondary: rgb(37, 99, 235);
-  --text-default: rgb(81, 89, 100);
+  --text-base: rgb(75, 85, 99);
+  --text-default: rgb(17, 24, 39);
 }
 
 /* Dark theme variables */
@@ -18,13 +21,17 @@
   --bg-Hero-primary: linear-gradient(to bottom right, #0f172a, #1e293b, #334155);
   --Hero-ImgShadow-primary: linear-gradient(to right, #1e40af, #0ea5e9);
   --bg-primary: linear-gradient(to bottom right, #0f172a, #1e293b);
-  --bg-secondary: linear-gradient(to bottom right, #3b82f6, #6366f1);
+  --bg-secondary: linear-gradient(to bottom right, #0f172a, #1e293b);
   --btn-primary: linear-gradient(to right, #1e40af, #3730a3);
-  --btn-secondary: #1e293b;
+  --btn-secondary: #0b1b33;
+  --cardBg-primary: linear-gradient(to bottom right, #102770, #1c1852, #321560);
+  --cardBg-secondary: rgba(255, 255, 255, 0.5);
   --text-primary: linear-gradient(to right, #60a5fa, #38bdf8);
   --text-secondary: #60a5fa;
-  --text-default: #cbd5e1;
+  --text-base: #9ca3af;
+  --text-default: #f9fafb;
 }
+
 
 .btn-primary {
   background: var(--btn-primary);
@@ -63,6 +70,22 @@
 
 .bg-secondary {
   background: var(--bg-secondary);
+}
+
+.cardBg-primary {
+  background: var(--cardBg-primary);
+}
+
+.cardBg-secondary {
+  background: var(--cardBg-secondary);
+}
+
+.text-base {
+  color: var(--text-base);
+}
+
+.text-default {
+  color: var(--text-default);
 }
 
 

@@ -35,7 +35,7 @@ export default function ContactMe() {
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center gap-3 mb-4">
                         <MessageCircle className="text-blue-500" size={28} />
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                        <h2 className="text-4xl md:text-5xl font-bold text-default">
                             Let&apos;s <span className="text-transparent text-secondary bg-clip-text">Connect</span>
                         </h2>
                         <MessageCircle className="text-blue-500" size={28} />
@@ -50,13 +50,13 @@ export default function ContactMe() {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
                     {/* Contact Form */}
                     <div className="flex-1 max-w-2xl mx-auto lg:mx-0 w-full">
-                        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 lg:p-10 border border-white/20 hover:shadow-2xl transition-all duration-300">
+                        <div className="cardBg-secondary backdrop-blur-sm rounded-3xl shadow-2xl p-8 lg:p-10 border border-white/20 hover:shadow-2xl transition-all duration-300">
                             <div className="text-left mb-8">
                                 <div className="flex items-center gap-3 mb-3">
                                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                                     <h3 className="text-2xl font-bold text-gray-900">Send me a message</h3>
                                 </div>
-                                <p className="text-gray-500 flex items-center gap-2">
+                                <p className="text-gray-700  flex items-center gap-2">
                                     <Clock size={16} />
                                     I&apos;ll get back to you within 24 hours
                                 </p>
@@ -157,9 +157,9 @@ export default function ContactMe() {
 
                     {/* Social Links & Info */}
                     <div className="flex-1 max-w-md mx-auto lg:mx-0">
-                        <div className="bg-secondary text-white rounded-3xl p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                        <div className="cardBg-primary text-white rounded-3xl p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
                             <h3 className="text-2xl font-bold mb-6">Let&apos;s start a conversation</h3>
-                            <p className="text-blue-100 mb-8 leading-relaxed">
+                            <p className="text-blue-200 mb-8 leading-relaxed">
                                 Whether you&apos;re looking to collaborate, have a question, or just want to connect,
                                 I&apos;m here and ready to help bring your ideas to life.
                             </p>

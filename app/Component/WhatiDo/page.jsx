@@ -20,13 +20,13 @@ export default function WhatIDo() {
     ];
 
     return (
-        <section id="services" className=" bg-linear-to-br from-white to-blue-50/20 py-24">
+        <section id="services" className=" bg-secondary py-24">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-3 mb-4">
                         <Sparkles size={24} className="text-blue-500" />
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                        <h2 className="text-4xl md:text-5xl font-bold text-default">
                             What I <span className="text-secondary">Do</span>
                         </h2>
                         <Sparkles size={24} className="text-blue-500" />
@@ -49,7 +49,7 @@ export default function WhatIDo() {
                             <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-blue-600/5 rounded-2xl transform group-hover:scale-105 transition-all duration-300"></div>
 
                             {/* Card */}
-                            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 group-hover:shadow-xl group-hover:border-blue-200/50 transition-all duration-300 h-full flex flex-col">
+                            <div className="relative cardBg-secondary  backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 group-hover:shadow-xl group-hover:border-blue-200/50 transition-all duration-300 h-full flex flex-col">
                                 {/* Icon Container */}
                                 <div className="mb-6">
                                     <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-2xl group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
@@ -62,7 +62,7 @@ export default function WhatIDo() {
                                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                                         {service.title}
                                     </h3>
-                                    <p className="text-gray-700 leading-relaxed">
+                                    <p className="text-gray-700 dark:text-gray-800 leading-relaxed">
                                         {service.description}
                                     </p>
                                 </div>
