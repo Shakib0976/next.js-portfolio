@@ -1,14 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary-gradient: linear-gradient(to right, #2563eb, #1d4ed8);
+  --bg-Hero-primary: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(239, 246, 255, 0.3), rgba(207, 250, 254, 0.2));
+  --Hero-ImgShadow-primary: linear-gradient(to right, #183b64, #67e8f9);
+  --bg-primary: linear-gradient(to bottom right, #f9fafb, rgba(239, 246, 255, 0.3));
+  --bg-secondary: linear-gradient( to bottom right, #2563eb, #1d4ed8, #7c3aed);
+  --btn-primary: linear-gradient(to right, #062c83, #114ad7);
+  --btn-secondary: white;
+  --text-primary: linear-gradient( to right, #2563eb, #0891b2);
+  --text-secondary:rgb(37, 99, 235);
+  --text-default:rgb(81, 89, 100);
+;
 }
 
+
 .btn-primary {
-  background: var(--primary-gradient);
+  background: var(--btn-primary);
 }
+.btn-secondary {
+  background: var(--btn-secondary);
+}
+.text-primary {
+  background: var(--text-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-secondary {
+ color: var(--text-secondary);
+  
+}
+.text-default {
+ color: var(--text-default);
+  
+}
+
+.bg-Hero-primary {
+  background: var(--bg-Hero-primary);
+}
+
+.hero-ImgShadow-primary {
+  background: var(--Hero-ImgShadow-primary);
+}
+.bg-primary {
+  background: var(--bg-primary);
+}
+.bg-secondary {
+  background: var(--bg-secondary);
+}
+
 
 
 
@@ -24,8 +64,6 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-
-    --primary-gradient: linear-gradient(to right, #2563eb, #1d4ed8);
     --secondary: #8b5cf6;
   }
 }

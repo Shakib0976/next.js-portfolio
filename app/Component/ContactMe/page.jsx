@@ -24,7 +24,7 @@ export default function ContactMe() {
 
 
     return (
-        <section id="contact" className="bg-linear-to-br from-gray-50 via-blue-50/30 to-cyan-50/20 py-24 relative overflow-hidden">
+        <section id="contact" className="bg-primary py-24 relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl"></div>
@@ -36,12 +36,12 @@ export default function ContactMe() {
                     <div className="inline-flex items-center gap-3 mb-4">
                         <MessageCircle className="text-blue-500" size={28} />
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                            Let&apos;s <span className="text-transparent bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text">Connect</span>
+                            Let&apos;s <span className="text-transparent text-secondary bg-clip-text">Connect</span>
                         </h2>
                         <MessageCircle className="text-blue-500" size={28} />
                     </div>
                     <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-default text-lg max-w-2xl mx-auto leading-relaxed">
                         I&apos;m always excited to discuss new opportunities, creative ideas, or just have a friendly chat.
                         Don&apos;t hesitate to reach out!
                     </p>
@@ -92,7 +92,7 @@ export default function ContactMe() {
 
                                         <button
                                             onClick={() => setSubmitted(false)}
-                                            className="inline-flex items-center gap-2  bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-semibold group relative overflow-hidden"
+                                            className="inline-flex items-center gap-2  btn-primary hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-semibold group relative overflow-hidden"
                                         >
 
                                             <svg className="w-5 h-5 relative z-10 group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +144,7 @@ export default function ContactMe() {
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-semibold flex items-center justify-center gap-2 group relative overflow-hidden"
+                                        className="w-full btn-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-semibold flex items-center justify-center gap-2 group relative overflow-hidden"
                                     >
                                         <div className="absolute inset-0 bg-linear-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                                         <span className="relative z-10">Send Message</span>
@@ -157,7 +157,7 @@ export default function ContactMe() {
 
                     {/* Social Links & Info */}
                     <div className="flex-1 max-w-md mx-auto lg:mx-0">
-                        <div className="bg-linear-to-br from-blue-600 via-blue-700 to-purple-600 text-white rounded-3xl p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                        <div className="bg-secondary text-white rounded-3xl p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
                             <h3 className="text-2xl font-bold mb-6">Let&apos;s start a conversation</h3>
                             <p className="text-blue-100 mb-8 leading-relaxed">
                                 Whether you&apos;re looking to collaborate, have a question, or just want to connect,

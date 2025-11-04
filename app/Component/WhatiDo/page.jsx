@@ -27,12 +27,12 @@ export default function WhatIDo() {
                     <div className="inline-flex items-center gap-3 mb-4">
                         <Sparkles size={24} className="text-blue-500" />
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                            What I <span className="text-blue-600">Do</span>
+                            What I <span className="text-secondary">Do</span>
                         </h2>
                         <Sparkles size={24} className="text-blue-500" />
                     </div>
                     <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-blue-600 mx-auto mb-6 rounded-full"></div>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-default  text-lg max-w-2xl mx-auto leading-relaxed">
                         I offer a comprehensive range of services to transform your ideas into
                         exceptional digital experiences on the web.
                     </p>
@@ -62,7 +62,7 @@ export default function WhatIDo() {
                                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                                         {service.title}
                                     </h3>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <p className="text-gray-700 leading-relaxed">
                                         {service.description}
                                     </p>
                                 </div>

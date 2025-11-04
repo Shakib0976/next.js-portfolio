@@ -28,7 +28,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                 >
                     <div className="relative">
-                        <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="w-3 h-3 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <span className="text-2xl font-bold text-gray-800">
                             Shakib<span className="text-blue-600">.</span>
                         </span>
@@ -50,7 +50,7 @@ export default function Navbar() {
                                 className="relative px-6 py-2 text-gray-700 font-medium rounded-xl hover:text-blue-600 transition-colors duration-200 group"
                             >
                                 {item.label}
-                                <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 group-hover:w-4 transition-all duration-300 rounded-full"></span>
+                                <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-blue-500 to-cyan-500 group-hover:w-4 transition-all duration-300 rounded-full"></span>
                             </Link>
                         </li>
                     ))}
@@ -60,9 +60,9 @@ export default function Navbar() {
                 <div className="hidden md:block">
                     <Link
                         href="#contact"
-                        className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm"
+                        className="px-6 py-2.5 btn-primary text-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm"
                     >
-                        Let's Talk
+                        Let&apos; s Talk
                     </Link>
                 </div>
 
@@ -110,7 +110,7 @@ export default function Navbar() {
                         <Link
                             href="#contact"
                             onClick={() => setIsOpen(false)}
-                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 font-semibold"
+                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 font-semibold"
                         >
                             <span>Get In Touch</span>
                             <Sparkles size={16} />

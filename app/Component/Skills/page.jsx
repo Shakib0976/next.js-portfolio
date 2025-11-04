@@ -35,19 +35,19 @@ export default function SkillsSection() {
 
     return (
         <div className="max-w-7xl mx-auto px-6 bg-linear-to-br from-gray-50 via-blue-50/20 to-purple-50/10 py-24 relative overflow-hidden">
-           
+
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-3 mb-4">
                         <Code2 className="text-blue-500" size={32} weight="duotone" />
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                            My <span className="text-transparent bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text">Skills</span>
+                            My <span className="text-transparent text-secondary bg-clip-text">Skills</span>
                         </h2>
                         <Sparkles className="text-purple-500" size={32} weight="duotone" />
                     </div>
                     <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-default  text-lg max-w-2xl mx-auto leading-relaxed">
                         Technologies and tools I use to bring ideas to life and create amazing digital experiences.
                     </p>
                 </div>
@@ -111,19 +111,19 @@ export default function SkillsSection() {
                 <div className="text-center mt-16">
                     <div className="inline-flex flex-wrap justify-center gap-8 bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                         <div className="text-center">
-                            <div className="text-2xl font-bold  bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            <div className="text-2xl font-bold text-secondary bg-clip-text text-transparent">
                                 {skills.length}+
                             </div>
                             <div className="text-gray-600 text-sm font-medium">Technologies</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-2xl font-bold  bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            <div className="text-2xl font-bold  text-secondary bg-clip-text text-transparent">
                                 2+
                             </div>
                             <div className="text-gray-600 text-sm font-medium">Years Experience</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-2xl font-bold  bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            <div className="text-2xl font-bold  text-secondary bg-clip-text text-transparent">
                                 50+
                             </div>
                             <div className="text-gray-600 text-sm font-medium">Projects</div>

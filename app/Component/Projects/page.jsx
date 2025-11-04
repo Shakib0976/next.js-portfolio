@@ -76,12 +76,12 @@ export default function Projects() {
                     <div className="inline-flex items-center gap-3 mb-4">
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                            Featured <span className="text-blue-600">Projects</span>
+                            Featured <span className="text-secondary">Projects</span>
                         </h2>
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                     </div>
                     <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-blue-600 mx-auto mb-6 rounded-full"></div>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-default  text-lg max-w-2xl mx-auto leading-relaxed">
                         Some of my recent works that showcase my skills and passion for web development.
                         Click to view live demo or explore the code on GitHub.
                     </p>
@@ -157,7 +157,7 @@ export default function Projects() {
                                                 <Link
                                                     href={project.github}
                                                     target="_blank"
-                                                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-300 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
+                                                    className="flex-1 btn-secondary  flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-300 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
                                                 >
                                                     <Github size={16} />
                                                     Code
@@ -234,7 +234,7 @@ export default function Projects() {
                                                     <Link
                                                         href={project.demo}
                                                         target="_blank"
-                                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-linear-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
+                                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 btn-primary text-white rounded-xl hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
                                                     >
                                                         <ExternalLink size={16} />
                                                         Live Demo
@@ -242,7 +242,7 @@ export default function Projects() {
                                                     <Link
                                                         href={project.github}
                                                         target="_blank"
-                                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-300 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
+                                                        className="flex-1 flex btn-secondary items-center justify-center gap-2 px-4 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-300 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-sm"
                                                     >
                                                         <Github size={16} />
                                                         Code

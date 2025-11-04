@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AboutMe = () => {
     return (
-        <div className="py-20 bg-linear-to-br from-gray-50 to-blue-50/30">
+        <div className="py-20 bg-primary">
             <section
                 id="about"
                 className="max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row items-center gap-16"
@@ -11,8 +11,8 @@ const AboutMe = () => {
                 <div className="flex-1 flex justify-center lg:justify-start relative">
                     <div className="relative">
                         {/* Background decorative elements */}
-                        <div className="absolute -inset-4 bg-linear-to-r from-blue-500 to-blue-600 rounded-2xl transform rotate-3 scale-105 opacity-10"></div>
-                        <div className="absolute -inset-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-2xl transform -rotate-3 scale-105 opacity-5"></div>
+                        <div className="absolute -inset-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-2xl transform rotate-3 scale-105 opacity-10"></div>
+                        <div className="absolute -inset-4 hero-ImgShadow-primary rounded-2xl transform -rotate-3 scale-105 opacity-5"></div>
 
                         {/* Main image container */}
                         <div className="relative w-80 h-80 rounded-2xl overflow-hidden shadow-2xl group">
@@ -39,7 +39,7 @@ const AboutMe = () => {
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-1 bg-linear-to-r from-blue-500 to-blue-600 rounded-full"></div>
                             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-                                About <span className="text-blue-600">Me</span>
+                                About <span className="text-secondary">Me</span>
                             </h2>
                         </div>
                         <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-blue-600 rounded-full"></div>
@@ -48,7 +48,7 @@ const AboutMe = () => {
                     {/* Content */}
                     <div className="space-y-6">
                         <p className="text-gray-700 text-lg leading-relaxed text-justify">
-                            Hello! I&apos;m <span className="font-semibold text-blue-600 bg-blue-50 px-1 rounded">Md. Shakib Khan</span>,
+                            Hello! I&apos;m <span className="font-semibold text-secondary bg-blue-50 px-1 rounded">Md. Shakib Khan</span>,
                             a passionate web developer with experience in building responsive, modern,
                             and user-friendly websites. I specialize in <span className="font-semibold text-gray-900 bg-yellow-50 px-1 rounded">Next.js</span>,
                             <span className="font-semibold text-gray-900 bg-blue-50 px-1 rounded"> React</span>, and
