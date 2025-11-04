@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/app/Context/ThemeContext/page";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,10 +17,16 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const navLinks = [
+                        { href: "#home", label: "Home" },
+                        { href: "#about", label: "About" },
+                        { href: "#projects", label: "Projects" },
+                        { href: "#contact", label: "Contact" }
+                    ]
     return (
         <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-                ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100/50"
-                : "bg-white/80 backdrop-blur-md shadow-sm"
+                ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-lg border-b border-gray-100/50 dark:border-gray-700/50"
+                : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm"
             }`}>
             <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
                 {/* Logo */}
@@ -29,25 +37,20 @@ export default function Navbar() {
                 >
                     <div className="relative">
                         <div className="w-3 h-3 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span className="text-2xl font-bold text-gray-800">
-                            Shakib<span className="text-blue-600">.</span>
+                        <span className="text-2xl font-bold text-gray-800 dark:text-white">
+                            Shakib<span className="text-blue-600 dark:text-blue-400">.</span>
                         </span>
                     </div>
                     <Sparkles size={16} className="text-blue-500 opacity-0 group-hover:opacity-100 transform group-hover:rotate-12 transition-all duration-300" />
                 </Link>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex items-center gap-1 bg-white/50 backdrop-blur-sm rounded-2xl px-2 py-1 border border-gray-200/50">
-                    {[
-                        { href: "#home", label: "Home" },
-                        { href: "#about", label: "About" },
-                        { href: "#projects", label: "Projects" },
-                        { href: "#contact", label: "Contact" }
-                    ].map((item) => (
+                <ul className="hidden md:flex items-center gap-1 bg-gray-300 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl px-2 py-1 border border-gray-200/50 dark:border-gray-600/50">
+                    {navLinks.map((item) => (
                         <li key={item.href}>
                             <Link
                                 href={item.href}
-                                className="relative px-6 py-2 text-gray-700 font-medium rounded-xl hover:text-blue-600 transition-colors duration-200 group"
+                                className="relative px-6 py-2 text-gray-700 dark:text-gray-300 font-medium rounded-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 group"
                             >
                                 {item.label}
                                 <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-blue-500 to-cyan-500 group-hover:w-4 transition-all duration-300 rounded-full"></span>
@@ -56,31 +59,52 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* CTA Button */}
-                <div className="hidden md:block">
+                {/* Desktop Actions */}
+                <div className="hidden md:flex items-center gap-4">
+                    {/* Theme Toggle */}
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+                        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                    >
+                        {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                    </button>
+
+                    {/* CTA Button */}
                     <Link
                         href="#contact"
                         className="px-6 py-2.5 btn-primary text-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm"
                     >
-                        Let&apos; s Talk
+                        Let&apos;s Talk
                     </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className={`md:hidden p-2 rounded-lg border transition-all duration-300 ${isOpen
-                            ? "bg-blue-50 border-blue-200 text-blue-600"
-                            : "bg-white/50 border-gray-200 text-gray-700 hover:border-blue-200"
-                        }`}
-                >
-                    {isOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
+                <div className="md:hidden flex items-center gap-2">
+                    {/* Theme Toggle for Mobile */}
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+                        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                    >
+                        {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                    </button>
+
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className={`p-2 rounded-lg border transition-all duration-300 ${isOpen
+                                ? "bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700 text-blue-600 dark:text-blue-400"
+                                : "bg-white/50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-200 dark:hover:border-blue-600"
+                            }`}
+                    >
+                        {isOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Dropdown */}
             {isOpen && (
-                <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100/50 shadow-xl">
+                <div className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-100/50 dark:border-gray-700/50 shadow-xl">
                     <ul className="flex flex-col py-4">
                         {[
                             { href: "#home", label: "Home", icon: "🏠" },
@@ -92,7 +116,7 @@ export default function Navbar() {
                                 <Link
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="flex items-center gap-4 px-6 py-4 text-gray-700 font-medium hover:bg-blue-50/50 hover:text-blue-600 transition-all duration-200 group border-l-4 border-transparent hover:border-blue-500"
+                                    className="flex items-center gap-4 px-6 py-4 text-gray-700 dark:text-gray-300 font-medium hover:bg-blue-50/50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group border-l-4 border-transparent hover:border-blue-500 dark:hover:border-blue-400"
                                     style={{ animationDelay: `${index * 100}ms` }}
                                 >
                                     <span className="text-lg opacity-60 group-hover:opacity-100 transition-opacity duration-200">
@@ -106,7 +130,7 @@ export default function Navbar() {
                     </ul>
 
                     {/* Mobile CTA */}
-                    <div className="px-6 py-4 border-t border-gray-100/50">
+                    <div className="px-6 py-4 border-t border-gray-100/50 dark:border-gray-700/50">
                         <Link
                             href="#contact"
                             onClick={() => setIsOpen(false)}

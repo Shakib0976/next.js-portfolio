@@ -1,38 +1,52 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --bg-Hero-primary: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(239, 246, 255, 0.3), rgba(207, 250, 254, 0.2));
   --Hero-ImgShadow-primary: linear-gradient(to right, #183b64, #67e8f9);
   --bg-primary: linear-gradient(to bottom right, #f9fafb, rgba(239, 246, 255, 0.3));
-  --bg-secondary: linear-gradient( to bottom right, #2563eb, #1d4ed8, #7c3aed);
+  --bg-secondary: linear-gradient(to bottom right, #2563eb, #1d4ed8, #7c3aed);
   --btn-primary: linear-gradient(to right, #062c83, #114ad7);
   --btn-secondary: white;
-  --text-primary: linear-gradient( to right, #2563eb, #0891b2);
-  --text-secondary:rgb(37, 99, 235);
-  --text-default:rgb(81, 89, 100);
-;
+  --text-primary: linear-gradient(to right, #2563eb, #0891b2);
+  --text-secondary: rgb(37, 99, 235);
+  --text-default: rgb(81, 89, 100);
 }
 
+/* Dark theme variables */
+:root.dark {
+  --bg-Hero-primary: linear-gradient(to bottom right, #0f172a, #1e293b, #334155);
+  --Hero-ImgShadow-primary: linear-gradient(to right, #1e40af, #0ea5e9);
+  --bg-primary: linear-gradient(to bottom right, #0f172a, #1e293b);
+  --bg-secondary: linear-gradient(to bottom right, #3b82f6, #6366f1);
+  --btn-primary: linear-gradient(to right, #1e40af, #3730a3);
+  --btn-secondary: #1e293b;
+  --text-primary: linear-gradient(to right, #60a5fa, #38bdf8);
+  --text-secondary: #60a5fa;
+  --text-default: #cbd5e1;
+}
 
 .btn-primary {
   background: var(--btn-primary);
 }
+
 .btn-secondary {
   background: var(--btn-secondary);
 }
+
 .text-primary {
   background: var(--text-primary);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .text-secondary {
- color: var(--text-secondary);
-  
+  color: var(--text-secondary);
 }
+
 .text-default {
- color: var(--text-default);
-  
+  color: var(--text-default);
 }
 
 .bg-Hero-primary {
@@ -42,37 +56,16 @@
 .hero-ImgShadow-primary {
   background: var(--Hero-ImgShadow-primary);
 }
+
 .bg-primary {
   background: var(--bg-primary);
 }
+
 .bg-secondary {
   background: var(--bg-secondary);
 }
 
 
-
-
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --secondary: #8b5cf6;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 /* skills section scroll animation */
 @keyframes scroll {
